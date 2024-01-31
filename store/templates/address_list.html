@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Address List - Your E-Commerce Store{% endblock %}
+
+{% block content %}
+<h1>Address List</h1>
+<ul class="list-group">
+    {% for address in addresses %}
+        <li class="list-group-item"><a href="{% url 'address_detail' address.pk %}">{{ address.address_line1 }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
