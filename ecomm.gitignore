@@ -1,0 +1,21 @@
+# Ignore Python virtual environment
+venv/
+env/
+
+# Ignore pipenv virtual environment
+.Python
+pipenv
+Pipfile.lock
+
+# Ignore PyCharm files
+.idea/
+
+# Ignore VSCode files
+.vscode/
+
+# Ignore any compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore Django migration files
+*/migrations/*
