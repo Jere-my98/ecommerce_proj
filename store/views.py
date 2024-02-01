@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .models import Product, Category, Order, OrderItem, Cart, CartItem, Address
 
 # Views for Products
+
+def store_home(request):
+    return render(request, 'store_base.html')
+
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'product_list.html', {'products': products})
