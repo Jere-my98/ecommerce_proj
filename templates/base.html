@@ -1,29 +1,42 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-        Your Django Project
-        {% endblock %}
-    </title>
-    <!-- Add your CSS links and other meta tags here -->
+    <title>{% block title %}Your Website Title{% endblock %}</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header>
-        <!-- Your header content goes here -->
-    </header>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div id="side-menu" class="side-menu">
+                <ul class="nav-links">
+                    <li><a href="{% url 'store_home' %}">Home</a></li>
+                    <li><a href="{% url 'product_list' %}">Products</a></li>
+                    <li><a href="{% url 'category_list' %}">Categories</a></li>
+                    <li><a href="{% url 'order_list' %}">Orders</a></li>
+                    <li><a href="{% url 'cart_detail' %}">Cart</a></li>
+                    <li><a href="{% url 'address_list' %}">Addresses</a></li>
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </div>
+            <span id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </span>
+        </div>
+    </nav>
 
-    <main>
+    <!-- Main content -->
+    <div class="content">
         {% block content %}
         {% endblock %}
-    </main>
+    </div>
 
-    <footer>
-        <!-- Your footer content goes here -->
-    </footer>
-    
-    <!-- Add your JavaScript links and other scripts here -->
+    <!-- Link to your JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
