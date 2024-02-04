@@ -18,9 +18,9 @@ urlpatterns = [
     path('orders/<int:pk>/', views.order_detail, name='order_detail'),
 
     # URL for Cart
-    path('cart/', views.cart_detail, name='cart_detail'),
+    # path('cart/', views.cart_detail, name='cart_detail'),
 
     # URLs for Addresses
-    path('addresses/', views.address_list, name='address_list'),
-    path('addresses/<int:pk>/', views.address_detail, name='address_detail'),
+    # path('addresses/', views.address_list, name='address_list'),
+    # path('addresses/<int:pk>/', views.address_detail, name='address_detail'),
 ]

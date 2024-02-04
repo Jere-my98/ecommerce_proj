@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Product, Category, Order, OrderItem, Cart, CartItem, Address
-
+from .models import Product, Category, Order, OrderItem
 # Views for Products
 
 def store_home(request):
@@ -34,16 +33,16 @@ def order_detail(request, pk):
     return render(request, 'order_detail.html', {'order': order, 'order_items': order_items})
 
 # Views for Cart
-def cart_detail(request):
-    cart = Cart.objects.get(user=request.user)
-    cart_items = CartItem.objects.filter(cart=cart)
-    return render(request, 'cart_detail.html', {'cart': cart, 'cart_items': cart_items})
+# def cart_detail(request):
+#     cart = Cart.objects.get(user=request.user)
+#     cart_items = CartItem.objects.filter(cart=cart)
+#     return render(request, 'cart_detail.html', {'cart': cart, 'cart_items': cart_items})
 
 # Views for Addresses
-def address_list(request):
-    addresses = Address.objects.filter(user=request.user)
-    return render(request, 'address_list.html', {'addresses': addresses})
+# def address_list(request):
+#     addresses = Address.objects.filter(user=request.user)
+#     return render(request, 'address_list.html', {'addresses': addresses})
 
-def address_detail(request, pk):
-    address = Address.objects.get(pk=pk)
-    return render(request, 'address_detail.html', {'address': address})
+# def address_detail(request, pk):
+#     address = Address.objects.get(pk=pk)
+#     return render(request, 'address_detail.html', {'address': address})

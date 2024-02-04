@@ -6,7 +6,7 @@
 <h1>Address List</h1>
 <ul class="list-group">
     {% for address in addresses %}
-        <li class="list-group-item"><a href="{% url 'address_detail' address.pk %}">{{ address.address_line1 }}</a></li>
+        {% comment %} <li class="list-group-item"><a href="{% url 'address_detail' address.pk %}">{{ address.address_line1 }}</a></li> {% endcomment %}
     {% endfor %}
 </ul>
 {% endblock %}
